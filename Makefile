@@ -27,7 +27,7 @@ hf-login:
 
 push-hub:
 	huggingface-cli upload sarahwei/Heart-Disease-Classification ./app --repo-type=space --commit-message="Sync App files"
-	huggingface-cli upload sarahwei/Heart-Disease-Classification ./model /model --repo=type=space --commit-message="Sync model"
+	huggingface-cli upload sarahwei/Heart-Disease-Classification ./model /model --repo-type=space --commit-message="Sync model"
 	huggingface-cli upload sarahwei/Heart-Disease-Classification ./result /metrics --repo-type=space --commit-message="Sync model"
 
 deploy: hf-login push-hub
