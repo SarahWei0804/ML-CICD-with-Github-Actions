@@ -27,19 +27,19 @@ pipe = Pipeline(steps=[
     ('preprocessing', transformer),
     ('model', RandomForestClassifier(n_estimators=300, random_state=0))
 ])
-pipe.fit(train_x, train_y)
+pipe.fit(train_x.values, train_y)
 
 
-predictions = pipe.predict(test_x)
+predictions = pipe.predict(test_x.values)
 accuracy = accuracy_score(test_y, predictions)
 f1 = f1_score(test_y, predictions, average='macro')
 
 with open("result/metrics.txt", "w") as outfile:
-    outfile.write(f"\nAccuracy = {accuracy.round(2)}, F1 Score = {f1.round(2)}.")
+    outfile.write(f"\nAccuracy = {round(accuracy, 2)}, F1 Score = {round(f1, 2)}.")
 
 cm = confusion_matrix(test_y, predictions, labels=pipe.classes_)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=pipe.classes_)
 disp.plot()
 plt.savefig("result/model_results.png", dpi=120)
 
-sio.dump(pipe, "Model/drug_pipeline.skops")
+sio.dump(pipe, "model/heart_pipeline.skops")
