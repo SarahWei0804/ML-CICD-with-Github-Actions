@@ -36,7 +36,7 @@ inputs = [gr.Slider(0, 105, step=1, label="Age"),
           gr.Radio(['Up', 'Flat', 'Down'], label='ST_Slope')]
 outputs = [gr.Label(num_top_classes=2)]
 
-examples = [[20, 'F', 'Typical Angina', 80, 200, 'over 120', 'Normal', 90, 'Y', 60, 'Flat']]
+examples = [[20, 'F', 'TA', 80, 200, '1', 'Normal', 90, 'Y', 60, 'Flat']]
 
 title = 'Heart Disease classification'
 description = 'Enter the details to identify the possibility to have heart disease.'
