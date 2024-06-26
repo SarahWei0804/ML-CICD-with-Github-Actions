@@ -7,3 +7,5 @@ I use random forest classifier as example to predict the possibility to have hea
 Finally, the model will deploy to Hugging Face Space.
 
 If a pull request or push action occurred, the code will automatically update with Github Actions. There's no need to manually retrain the model.
+
+The application of Hugging Face is [here](https://huggingface.co/spaces/sarahwei/Heart-Disease-Classification).
