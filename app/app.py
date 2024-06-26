@@ -1,7 +1,7 @@
 import gradio as gr
 import skops.io as sio
 
-pipe = sio.load("../model/heart_pipeline.skops", trusted=True)
+pipe = sio.load("model/heart_pipeline.skops", trusted=True)
 
 def predict_heart(age, sex, chestpaintype, restingbp, cholesterol, fastingbs, restingecg, maxhr, exerciseangina, oldpeak, st_slope):
     """Predict heart disease based on patient features.
